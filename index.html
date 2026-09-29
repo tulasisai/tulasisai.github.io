@@ -1,117 +1,40 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ticket Booking</title>
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: 'Arial', sans-serif;
-      background: url('background.jpg') no-repeat center center fixed;
-      background-size: cover;
-      color: #fff;
-    }
-
-    header {
-      background: #333;
-      padding: 10px;
-      text-align: center;
-    }
-
-    nav {
-      display: flex;
-      justify-content: center;
-      background: #444;
-      padding: 10px;
-    }
-
-    nav a {
-      color: #fff;
-      text-decoration: none;
-      margin: 0 20px;
-      font-size: 18px;
-    }
-
-    section {
-      padding: 20px;
-    }
-
-    form {
-      display: flex;
-      flex-direction: column;
-      max-width: 300px;
-      margin: auto;
-    }
-
-    label {
-      margin-bottom: 8px;
-    }
-
-    input, select {
-      padding: 10px;
-      margin-bottom: 15px;
-    }
-
-    button {
-      padding: 10px;
-      background: #4CAF50;
-      color: #fff;
-      border: none;
-      cursor: pointer;
-    }
-
-    button:hover {
-      background: #45a049;
-    }
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tulasisai Pechetti · Portfolio</title>
+<meta name="description" content="IT, networking, systems administration and Python portfolio.">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
+<header class="top">
+  <a class="brand" href="">Tulasisai Pechetti</a>
+  <nav><a href="sysadmin/">Systems Administration</a><a href="network/">Network Engineering</a><a href="it-support/">IT Support</a><a href="python/">Python Development</a></nav>
+</header>
+<main>
 
-  <header>
-    <h1>Ticket Booking System</h1>
-  </header>
+<section class="hero">
+  <p class="eyebrow">IT · Networking · Systems · Python</p>
+  <h1>Tulasisai Pechetti</h1>
+  <p class="lead">IT and software engineer supporting 200+ users and 190+ Windows endpoints. Hands-on with Microsoft 365,
+  Intune, Entra ID, enterprise networking and Python automation. M.S. in Computer and Information Sciences, University of North Texas.</p>
+  <div class="cta">
+    <a class="btn" href="mailto:Tulasisaipechetti@gmail.com">Get in touch</a>
+    <a class="btn ghost" href="https://www.linkedin.com/in/t-sai-pechetti">LinkedIn</a>
+  </div>
+</section>
+<section><h2>Choose a focus</h2><div class="grid"><a class="card role" href="sysadmin/"><p class="eyebrow">Systems Administration</p><h3>Systems Administrator</h3><p>Systems Administrator with hands-on experience running Microsoft 365, Intune, Entra ID and Windows/Linux environments for 200+ users and 190+ Windows endpoints.</p><span class="more">View profile →</span></a><a class="card role" href="network/"><p class="eyebrow">Network Engineering</p><h3>Network Engineer</h3><p>Network Engineer with experience across enterprise network operations, Layer 2/3 troubleshooting and Python-driven network automation.</p><span class="more">View profile →</span></a><a class="card role" href="it-support/"><p class="eyebrow">IT Support</p><h3>IT Support Technician</h3><p>IT Technician supporting 200+ users and 190+ Windows endpoints with hands-on Microsoft 365, Intune, Autopilot and Entra ID administration.</p><span class="more">View profile →</span></a><a class="card role" href="python/"><p class="eyebrow">Python Development</p><h3>Python Developer</h3><p>Python Developer who builds backend services, automation and data-processing tools.</p><span class="more">View profile →</span></a></div></section>
+<section><h2>Projects</h2><div class="grid"><article class="card"><h3>Security Intelligence Platform</h3><div class="chips"><span>Python</span><span>FastAPI</span><span>React</span><span>JWT</span><span>YAML</span><span>MITRE ATT&amp;CK</span></div><ul><li>Built a platform that turns heterogeneous security logs (JSON, Syslog, CSV, text) into explainable, evidence-based intelligence with automatic schema detection.</li><li>Implemented threat scoring, campaign correlation, MITRE ATT&amp;CK mapping and NIST-aligned analysis; deployed via GitHub, Railway and Vercel.</li></ul></article>
+<article class="card"><h3>Network Validation &amp; Automation Toolkit</h3><div class="chips"><span>Python</span><span>Netmiko</span><span>Paramiko</span><span>Sockets</span><span>JSON</span></div><ul><li>Automated Layer 2/3 validation: IP connectivity, interface status, routing tables, VLAN configuration and reachability.</li><li>Used SSH-based automation to collect device information and generate structured validation reports, reducing manual verification.</li></ul></article>
+<article class="card"><h3>Python Network Port Scanner</h3><div class="chips"><span>Python</span><span>Socket Programming</span><span>TCP/IP</span><span>Multithreading</span></div><ul><li>Built a multithreaded TCP port scanner with configurable port ranges and timeout handling to identify open/closed ports on remote hosts.</li><li>Produced structured scan results for troubleshooting and basic security assessments of service availability.</li></ul></article>
+<article class="card"><h3>PDF Analysis Tool with AI, NLP &amp; Automation</h3><div class="chips"><span>Python</span><span>OCR</span><span>NLP</span><span>SQL</span><span>Streamlit</span><span>OpenAI API</span></div><ul><li>Built an AI document-analysis app that extracts, processes and summarizes PDF content with OCR and NLP.</li><li>Added conversational natural-language search over documents and automated ingestion, extraction and preprocessing workflows.</li></ul></article></div></section>
 
-  <nav>
-    <a href="#">Home</a>
-    <a href="#">Movies</a>
-    <a href="#">Events</a>
-    <a href="#">Contact</a>
-  </nav>
-
-  <section>
-    <h2>Book Your Tickets</h2>
-    <form id="bookingForm">
-      <label for="event">Select Event:</label>
-      <select id="event" name="event">
-        <option value="movie">Movie</option>
-        <option value="concert">Concert</option>
-        <!-- Add more options as needed -->
-      </select>
-
-      <label for="quantity">Number of Tickets:</label>
-      <input type="number" id="quantity" name="quantity" min="1" required>
-
-      <label for="name">Your Name:</label>
-      <input type="text" id="name" name="name" required>
-
-      <button type="button" onclick="submitForm()">Book Now</button>
-    </form>
-
-    <div id="confirmation" style="display:none;">
-      <p id="confirmationText">Your tickets have been booked. Thank you!</p>
-    </div>
-  </section>
-
-  <script>
-    function submitForm() {
-      // Perform any additional processing here (e.g., sending data to a server)
-      // For now, just show a confirmation message
-      document.getElementById('bookingForm').style.display = 'none';
-      document.getElementById('confirmation').style.display = 'block';
-    }
-  </script>
-
+</main>
+<footer>
+  <a href="mailto:Tulasisaipechetti@gmail.com">Tulasisaipechetti@gmail.com</a> ·
+  <a href="https://www.linkedin.com/in/t-sai-pechetti">LinkedIn</a> ·
+  <a href="https://github.com/tulasisai">GitHub</a>
+</footer>
 </body>
 </html>
